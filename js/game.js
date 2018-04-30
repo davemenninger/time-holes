@@ -23,6 +23,8 @@ Game.create = function(){
     }
     layer.inputEnabled = true;
     layer.events.onInputUp.add(Game.getCoordinates, this);
+
+    Game.addNewPlayer(1,100,200);
 };
 
 Game.addNewPlayer = function(id,x,y){
@@ -36,9 +38,11 @@ Game.removePlayer = function(id){
 
 Game.getCoordinates = function(layer,pointer){
     console.log(pointer.worldX+' '+pointer.worldY);
+    Game.movePlayer(1,pointer.worldX,pointer.worldY);
 };
 
 Game.movePlayer = function(id,x,y){
+    console.log('mP '+x+' '+y);
     var player = Game.playerMap[id];
     var distance = Phaser.Math.distance(player.x,player.y,x,y);
     var duration = distance*10;
