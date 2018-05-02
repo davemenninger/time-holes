@@ -79,6 +79,7 @@ Game.update = function() {
 
 Game.go_world_1 = function() {
     console.log('wow');
+    game.state.start('Hole1');
 };
 
 Game.go_world_2 = function() {
@@ -90,5 +91,3 @@ Game.go_world_3 = function() {
 };
 
 var game = new Phaser.Game(24*32,17*32,Phaser.AUTO,document.getElementById('game'));
-game.state.add('Game',Game);
-game.state.start('Game');
