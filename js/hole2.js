@@ -32,6 +32,8 @@ Hole2.create = function() {
     player = game.add.sprite(50, 50, 'you');
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
+
+    Game.instructions();
 };
 
 Hole2.update = function() {
