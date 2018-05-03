@@ -1,18 +1,18 @@
-Hole1 = {};
+Hole2 = {};
 
 var player;
 
-Hole1.init = function() {
+Hole2.init = function() {
     game.stage.disableVisibilityChange = true;
 };
 
-Hole1.preload = function(){
+Hole2.preload = function(){
     game.load.image('tree1', 'assets/sprites/kenneyrpgpack/PNG/rpgTile160.png');
     game.load.image('tree2', 'assets/sprites/kenneyrpgpack/PNG/rpgTile159.png');
     game.load.image('hole0', 'assets/sprites/kenney_runepack/PNG/Blue/Slab (outline)/runeBlue_slabOutline_025.png');
 };
 
-Hole1.create = function() {
+Hole2.create = function() {
     var map = game.add.tilemap('map');
     map.addTilesetImage('tilesheet', 'tileset');
     var layer;
@@ -27,7 +27,7 @@ Hole1.create = function() {
     hole0.body.immovable = true;
 
     things.forEach(function(thing){
-        game.add.sprite(thing.x,thing.y,'tree1');
+        game.add.sprite(thing.x,thing.y,'tree2');
     });
 
     player = game.add.sprite(50, 50, 'you');
@@ -35,13 +35,13 @@ Hole1.create = function() {
     player.body.collideWorldBounds = true;
 };
 
-Hole1.update = function() {
+Hole2.update = function() {
     game.physics.arcade.collide(player, hole0, Game.go_world_0, null, this);
 
     cursors = game.input.keyboard.createCursorKeys();
     key1 = game.input.keyboard.addKey(Phaser.Keyboard.T);
 
-    key1.onDown.add( Hole1.addTree, this);
+    key1.onDown.add( Hole2.addTree, this);
 
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
@@ -61,11 +61,11 @@ Hole1.update = function() {
     }
 };
 
-Hole1.addTree = function(x, y) {
+Hole2.addTree = function(x, y) {
     things.push({
         foo: 'tree',
         x: player.x,
         y: player.y,
-        sprite: game.add.sprite(player.x,player.y,'tree1'),
+        sprite: game.add.sprite(player.x,player.y,'tree2'),
     });
 };

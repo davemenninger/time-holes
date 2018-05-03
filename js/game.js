@@ -77,6 +77,11 @@ Game.update = function() {
     }
 };
 
+Game.go_world_0 = function() {
+    console.log('home');
+    game.state.start('Game');
+};
+
 Game.go_world_1 = function() {
     console.log('wow');
     game.state.start('Hole1');
@@ -84,6 +89,7 @@ Game.go_world_1 = function() {
 
 Game.go_world_2 = function() {
     console.log('wow2');
+    game.state.start('Hole2');
 };
 
 Game.go_world_3 = function() {
