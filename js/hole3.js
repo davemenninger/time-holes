@@ -1,17 +1,17 @@
-Hole2 = {};
+Hole3 = {};
 
 var player;
 
-Hole2.init = function() {
+Hole3.init = function() {
     game.stage.disableVisibilityChange = true;
 };
 
-Hole2.preload = function(){
-    game.load.image('tree2', 'assets/sprites/kenneyrpgpack/PNG/rpgTile159.png');
+Hole3.preload = function(){
+    game.load.image('tree3', 'assets/sprites/kenneyrpgpack/PNG/smalltree.png');
     game.load.image('hole0', 'assets/sprites/kenney_runepack/PNG/Blue/Slab (outline)/runeBlue_slabOutline_025.png');
 };
 
-Hole2.create = function() {
+Hole3.create = function() {
     var map = game.add.tilemap('map');
     map.addTilesetImage('tilesheet', 'tileset');
     var layer;
@@ -26,7 +26,7 @@ Hole2.create = function() {
     hole0.body.immovable = true;
 
     things.forEach(function(thing){
-        game.add.sprite(thing.x,thing.y,'tree2');
+        game.add.sprite(thing.x,thing.y,'tree3');
     });
 
     player = game.add.sprite(50, 50, 'you');
@@ -34,7 +34,7 @@ Hole2.create = function() {
     player.body.collideWorldBounds = true;
 };
 
-Hole2.update = function() {
+Hole3.update = function() {
     game.physics.arcade.collide(player, hole0, Game.go_world_0, null, this);
 
     cursors = game.input.keyboard.createCursorKeys();

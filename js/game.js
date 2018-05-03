@@ -94,6 +94,7 @@ Game.go_world_2 = function() {
 
 Game.go_world_3 = function() {
     console.log('wow3');
+    game.state.start('Hole3');
 };
 
 var game = new Phaser.Game(24*32,17*32,Phaser.AUTO,document.getElementById('game'));
