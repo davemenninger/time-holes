@@ -33,6 +33,9 @@ Hole1.create = function() {
     player = game.add.sprite(50, 50, 'you');
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
+
+    Game.instructions();
+    Hole1.instructions();
 };
 
 Hole1.update = function() {
@@ -68,4 +71,22 @@ Hole1.addTree = function(x, y) {
         y: player.y,
         sprite: game.add.sprite(player.x,player.y,'tree1'),
     });
+};
+
+Hole1.instructions = function() {
+    text = game.add.text(game.world.centerX, 60, 'press T to plant a tree');
+
+    //    Center align
+    text.anchor.set(0.5);
+    text.align = 'center';
+
+    //    Font style
+    text.font = 'Arial Black';
+    text.fontSize = 20;
+    text.fontWeight = 'bold';
+
+    //    Stroke color and thickness
+    text.stroke = '#000000';
+    text.strokeThickness = 4;
+    text.fill = '#bbaaff';
 };

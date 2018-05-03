@@ -48,6 +48,9 @@ Game.create = function(){
     game.physics.enable(hole3, Phaser.Physics.ARCADE);
     hole3.name = 'hole3';
     hole3.body.immovable = true;
+
+    Game.instructions();
+
 };
 
 Game.update = function() {
@@ -95,6 +98,24 @@ Game.go_world_2 = function() {
 Game.go_world_3 = function() {
     console.log('wow3');
     game.state.start('Hole3');
+};
+
+Game.instructions = function() {
+    text = game.add.text(game.world.centerX, 30, 'use arrow keys to move');
+
+    //    Center align
+    text.anchor.set(0.5);
+    text.align = 'center';
+
+    //    Font style
+    text.font = 'Arial Black';
+    text.fontSize = 20;
+    text.fontWeight = 'bold';
+
+    //    Stroke color and thickness
+    text.stroke = '#000000';
+    text.strokeThickness = 4;
+    text.fill = '#bbaaff';
 };
 
 var game = new Phaser.Game(24*32,17*32,Phaser.AUTO,document.getElementById('game'));
